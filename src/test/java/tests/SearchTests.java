@@ -11,38 +11,7 @@ import static com.codeborne.selenide.Selenide.*;
 import static io.qameta.allure.Allure.step;
 
 public class SearchTests extends TestBase {
-    @Tag("android")
-    @Test
-    @DisplayName("Проверка выдачи")
-    void searchTest() {
-        step("Type search", () -> {
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-            $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
-        });
-        step("Verify content found", () ->
-                $$(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_title"))
-                        .shouldHave(CollectionCondition.sizeGreaterThan(0)));
-    }
-
-    @Tag("android")
-    @Test
-    @DisplayName("Проверка наличия description")
-    void descriptionTest() {
-        step("Type search", () -> {
-            back();
-            step("Type search", () -> {
-                $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
-                $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("cat");
-            });
-
-            step("Go to article", () -> {
-                $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
-                        .shouldHave(text("Domesticated felid species"));
-            });
-        });
-    }
-
-    @Tag("android")
+  @Tag("android")
     @Test
     @DisplayName("Проверка перехода на статью")
     void openArticalTest() {

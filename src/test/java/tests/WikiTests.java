@@ -41,6 +41,7 @@ public class WikiTests extends TestBase {
     }
 
     @Tag("android")
+    @Tag("article")
     @Test
     @DisplayName("Проверка перехода на статью")
     void openArticalTest() {

@@ -24,7 +24,6 @@ public class TestBase {
     public void startDriver() {
         addListener("AllureSelenide", new AllureSelenide());
         open();
-        sleep(50000);
         back();
     }
 

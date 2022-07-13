@@ -62,3 +62,8 @@ task android(type: Test) {
         includeTags 'android'
     }
 }
+    task article(type: Test) {
+        useJUnitPlatform {
+            includeTags 'article'
+        }
+}

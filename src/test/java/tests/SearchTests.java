@@ -15,7 +15,6 @@ public class SearchTests extends TestBase {
     @Test
     @DisplayName("Проверка выдачи")
     void searchTest() {
-        back();
         step("Type search", () -> {
             $(AppiumBy.id("org.wikipedia.alpha:id/search_container")).click();
             $(AppiumBy.id("org.wikipedia.alpha:id/search_src_text")).sendKeys("BrowserStack");
@@ -38,8 +37,7 @@ public class SearchTests extends TestBase {
 
             step("Go to article", () -> {
                 $(AppiumBy.id("org.wikipedia.alpha:id/page_list_item_description"))
-                        .shouldHave(text("Domesticated felid species"
-                        ));
+                        .shouldHave(text("Domesticated felid species"));
             });
         });
     }
@@ -63,4 +61,5 @@ public class SearchTests extends TestBase {
         });
 
     }
+
 }

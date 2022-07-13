@@ -14,14 +14,11 @@ import static helpers.Attach.sessionId;
 import static io.qameta.allure.Allure.step;
 
 public class TestBase {
-    @BeforeAll
-    public static void setup() {
-        Configuration.browser = BrowserstackMobileDriver.class.getName();
-        Configuration.browserSize = null;
-    }
 
     @BeforeEach
     public void startDriver() {
+        Configuration.browser = BrowserstackMobileDriver.class.getName();
+        Configuration.browserSize = null;
         addListener("AllureSelenide", new AllureSelenide());
 
         open();
